@@ -10128,19 +10128,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\пк\\.nuget\\packages\\": {}
+    "C:\\Users\\user\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\Навчання\\3 курс\\oop\\gigka\\Liquid\\LiquidWebApp.csproj",
+      "projectUniqueName": "C:\\Users\\user\\Source\\Repos\\project\\Liquid\\LiquidWebApp.csproj",
       "projectName": "LiquidWebApp",
-      "projectPath": "E:\\Навчання\\3 курс\\oop\\gigka\\Liquid\\LiquidWebApp.csproj",
-      "packagesPath": "C:\\Users\\пк\\.nuget\\packages\\",
-      "outputPath": "E:\\Навчання\\3 курс\\oop\\gigka\\Liquid\\obj\\",
+      "projectPath": "C:\\Users\\user\\Source\\Repos\\project\\Liquid\\LiquidWebApp.csproj",
+      "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\user\\Source\\Repos\\project\\Liquid\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\пк\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\user\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -10154,11 +10154,11 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "E:\\Навчання\\3 курс\\oop\\gigka\\Liquid.Core\\Liquid.Core.csproj": {
-              "projectPath": "E:\\Навчання\\3 курс\\oop\\gigka\\Liquid.Core\\Liquid.Core.csproj"
+            "C:\\Users\\user\\Source\\Repos\\project\\Liquid.Core\\Liquid.Core.csproj": {
+              "projectPath": "C:\\Users\\user\\Source\\Repos\\project\\Liquid.Core\\Liquid.Core.csproj"
             },
-            "E:\\Навчання\\3 курс\\oop\\gigka\\Liquid.Repos\\Liquid.Repos.csproj": {
-              "projectPath": "E:\\Навчання\\3 курс\\oop\\gigka\\Liquid.Repos\\Liquid.Repos.csproj"
+            "C:\\Users\\user\\Source\\Repos\\project\\Liquid.Repos\\Liquid.Repos.csproj": {
+              "projectPath": "C:\\Users\\user\\Source\\Repos\\project\\Liquid.Repos\\Liquid.Repos.csproj"
             }
           }
         }
@@ -10235,7 +10235,7 @@
       "code": "NU1701",
       "level": "Warning",
       "warningLevel": 1,
-      "message": "Package 'Microsoft.AspNet.Identity.Core 2.2.3' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework 'net6.0'. This package may not be fully compatible with your project.",
+      "message": "Пакет \"Microsoft.AspNet.Identity.Core 2.2.3\" был восстановлен с помощью \".NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8\", а не целевой платформы проекта \"net6.0\". Этот пакет может быть не полностью совместим с вашим проектом.",
       "libraryId": "Microsoft.AspNet.Identity.Core",
       "targetGraphs": [
         "net6.0"

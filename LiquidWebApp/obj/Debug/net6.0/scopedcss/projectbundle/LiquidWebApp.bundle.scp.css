@@ -1,0 +1,49 @@
+/* _content/LiquidWebApp/Views/Shared/_Layout.cshtml.rz.scp.css */
+/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
+for details on configuring this project to bundle and minify static web assets. */
+
+a.navbar-brand[b-sg6ukmrdui] {
+  white-space: normal;
+  text-align: center;
+  word-break: break-all;
+}
+
+a[b-sg6ukmrdui] {
+  color: #0077cc;
+}
+
+.btn-primary[b-sg6ukmrdui] {
+  color: #fff;
+  background-color: #1b6ec2;
+  border-color: #1861ac;
+}
+
+.nav-pills .nav-link.active[b-sg6ukmrdui], .nav-pills .show > .nav-link[b-sg6ukmrdui] {
+  color: #fff;
+  background-color: #1b6ec2;
+  border-color: #1861ac;
+}
+
+.border-top[b-sg6ukmrdui] {
+  border-top: 1px solid #e5e5e5;
+}
+.border-bottom[b-sg6ukmrdui] {
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.box-shadow[b-sg6ukmrdui] {
+  box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+}
+
+button.accept-policy[b-sg6ukmrdui] {
+  font-size: 1rem;
+  line-height: inherit;
+}
+
+.footer[b-sg6ukmrdui] {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  white-space: nowrap;
+  line-height: 60px;
+}
