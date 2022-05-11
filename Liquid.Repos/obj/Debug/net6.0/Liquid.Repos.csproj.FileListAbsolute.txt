@@ -1,0 +1,15 @@
+E:\Навчання\3 курс\oop\gigka\Liquid.Repos\bin\Debug\net6.0\Liquid.Repos.deps.json
+E:\Навчання\3 курс\oop\gigka\Liquid.Repos\bin\Debug\net6.0\Liquid.Repos.dll
+E:\Навчання\3 курс\oop\gigka\Liquid.Repos\bin\Debug\net6.0\Liquid.Repos.pdb
+E:\Навчання\3 курс\oop\gigka\Liquid.Repos\bin\Debug\net6.0\Liquid.Core.dll
+E:\Навчання\3 курс\oop\gigka\Liquid.Repos\bin\Debug\net6.0\Liquid.Core.pdb
+E:\Навчання\3 курс\oop\gigka\Liquid.Repos\obj\Debug\net6.0\Liquid.Repos.csproj.AssemblyReference.cache
+E:\Навчання\3 курс\oop\gigka\Liquid.Repos\obj\Debug\net6.0\Liquid.Repos.GeneratedMSBuildEditorConfig.editorconfig
+E:\Навчання\3 курс\oop\gigka\Liquid.Repos\obj\Debug\net6.0\Liquid.Repos.AssemblyInfoInputs.cache
+E:\Навчання\3 курс\oop\gigka\Liquid.Repos\obj\Debug\net6.0\Liquid.Repos.AssemblyInfo.cs
+E:\Навчання\3 курс\oop\gigka\Liquid.Repos\obj\Debug\net6.0\Liquid.Repos.csproj.CoreCompileInputs.cache
+E:\Навчання\3 курс\oop\gigka\Liquid.Repos\obj\Debug\net6.0\Liquid.Repos.csproj.CopyComplete
+E:\Навчання\3 курс\oop\gigka\Liquid.Repos\obj\Debug\net6.0\Liquid.Repos.dll
+E:\Навчання\3 курс\oop\gigka\Liquid.Repos\obj\Debug\net6.0\refint\Liquid.Repos.dll
+E:\Навчання\3 курс\oop\gigka\Liquid.Repos\obj\Debug\net6.0\Liquid.Repos.pdb
+E:\Навчання\3 курс\oop\gigka\Liquid.Repos\obj\Debug\net6.0\ref\Liquid.Repos.dll

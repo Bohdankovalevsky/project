@@ -1,5 +1,5 @@
 ﻿using System;
-using LiquidInfo;
+using LiquidCore;
 using System.Collections.Generic;
 using System.Linq;
 using Microsoft.EntityFrameworkCore;

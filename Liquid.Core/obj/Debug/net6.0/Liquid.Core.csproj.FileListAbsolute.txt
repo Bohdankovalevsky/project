@@ -1,0 +1,14 @@
+E:\Навчання\3 курс\oop\gigka\Liquid.Core\bin\Debug\net6.0\Liquid.Core.deps.json
+E:\Навчання\3 курс\oop\gigka\Liquid.Core\bin\Debug\net6.0\Liquid.Core.runtimeconfig.json
+E:\Навчання\3 курс\oop\gigka\Liquid.Core\bin\Debug\net6.0\Liquid.Core.dll
+E:\Навчання\3 курс\oop\gigka\Liquid.Core\bin\Debug\net6.0\Liquid.Core.pdb
+E:\Навчання\3 курс\oop\gigka\Liquid.Core\obj\Debug\net6.0\Liquid.Core.csproj.AssemblyReference.cache
+E:\Навчання\3 курс\oop\gigka\Liquid.Core\obj\Debug\net6.0\Liquid.Core.GeneratedMSBuildEditorConfig.editorconfig
+E:\Навчання\3 курс\oop\gigka\Liquid.Core\obj\Debug\net6.0\Liquid.Core.AssemblyInfoInputs.cache
+E:\Навчання\3 курс\oop\gigka\Liquid.Core\obj\Debug\net6.0\Liquid.Core.AssemblyInfo.cs
+E:\Навчання\3 курс\oop\gigka\Liquid.Core\obj\Debug\net6.0\Liquid.Core.csproj.CoreCompileInputs.cache
+E:\Навчання\3 курс\oop\gigka\Liquid.Core\obj\Debug\net6.0\Liquid.Core.dll
+E:\Навчання\3 курс\oop\gigka\Liquid.Core\obj\Debug\net6.0\refint\Liquid.Core.dll
+E:\Навчання\3 курс\oop\gigka\Liquid.Core\obj\Debug\net6.0\Liquid.Core.pdb
+E:\Навчання\3 курс\oop\gigka\Liquid.Core\obj\Debug\net6.0\Liquid.Core.genruntimeconfig.cache
+E:\Навчання\3 курс\oop\gigka\Liquid.Core\obj\Debug\net6.0\ref\Liquid.Core.dll
