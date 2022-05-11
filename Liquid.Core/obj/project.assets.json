@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\user\\source\\repos\\project\\Liquid\\LiquidWebApp.csproj",
-      "projectName": "LiquidWebApp",
-      "projectPath": "C:\\Users\\user\\source\\repos\\project\\Liquid\\LiquidWebApp.csproj",
+      "projectUniqueName": "C:\\Users\\user\\source\\repos\\project\\Liquid.Core\\Liquid.Core.csproj",
+      "projectName": "Liquid.Core",
+      "projectPath": "C:\\Users\\user\\source\\repos\\project\\Liquid.Core\\Liquid.Core.csproj",
       "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\user\\source\\repos\\project\\Liquid\\obj\\",
+      "outputPath": "C:\\Users\\user\\source\\repos\\project\\Liquid.Core\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\user\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -56,9 +56,6 @@
         "assetTargetFallback": true,
         "warn": true,
         "frameworkReferences": {
-          "Microsoft.AspNetCore.App": {
-            "privateAssets": "none"
-          },
           "Microsoft.NETCore.App": {
             "privateAssets": "all"
           }

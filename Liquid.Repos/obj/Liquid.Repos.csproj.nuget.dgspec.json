@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\user\\source\\repos\\project\\Liquid\\Liquid.csproj": {}
+    "C:\\Users\\user\\source\\repos\\project\\Liquid.Repos\\Liquid.Repos.csproj": {}
   },
   "projects": {
-    "C:\\Users\\user\\source\\repos\\project\\Liquid\\Liquid.csproj": {
+    "C:\\Users\\user\\source\\repos\\project\\Liquid.Repos\\Liquid.Repos.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\user\\source\\repos\\project\\Liquid\\Liquid.csproj",
-        "projectName": "Liquid",
-        "projectPath": "C:\\Users\\user\\source\\repos\\project\\Liquid\\Liquid.csproj",
+        "projectUniqueName": "C:\\Users\\user\\source\\repos\\project\\Liquid.Repos\\Liquid.Repos.csproj",
+        "projectName": "Liquid.Repos",
+        "projectPath": "C:\\Users\\user\\source\\repos\\project\\Liquid.Repos\\Liquid.Repos.csproj",
         "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\user\\source\\repos\\project\\Liquid\\obj\\",
+        "outputPath": "C:\\Users\\user\\source\\repos\\project\\Liquid.Repos\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\user\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -50,9 +50,6 @@
           "assetTargetFallback": true,
           "warn": true,
           "frameworkReferences": {
-            "Microsoft.AspNetCore.App": {
-              "privateAssets": "none"
-            },
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }

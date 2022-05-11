@@ -1,15 +1,15 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\user\\source\\repos\\project\\Liquid\\Liquid.csproj": {}
+    "C:\\Users\\user\\source\\repos\\project\\Liquid\\LiquidWebApp.csproj": {}
   },
   "projects": {
-    "C:\\Users\\user\\source\\repos\\project\\Liquid\\Liquid.csproj": {
+    "C:\\Users\\user\\source\\repos\\project\\Liquid\\LiquidWebApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\user\\source\\repos\\project\\Liquid\\Liquid.csproj",
-        "projectName": "Liquid",
-        "projectPath": "C:\\Users\\user\\source\\repos\\project\\Liquid\\Liquid.csproj",
+        "projectUniqueName": "C:\\Users\\user\\source\\repos\\project\\Liquid\\LiquidWebApp.csproj",
+        "projectName": "LiquidWebApp",
+        "projectPath": "C:\\Users\\user\\source\\repos\\project\\Liquid\\LiquidWebApp.csproj",
         "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\user\\source\\repos\\project\\Liquid\\obj\\",
         "projectStyle": "PackageReference",

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "BoJ83cLACYOLaw/x7N9zSCMsU9rZeUAh9l+PDkcrxsXnvn0m44sjVqCqS45iKa6R/ggw+bNNOwp1YMXkP1NmlQ==",
+  "dgSpecHash": "mRj1czlf89KH9TmFVmH/zGXr+sgjfqfNCXD+qhJMAansxPvsIhJ5xiDzgqGWbTcqUb4jvuCKOGB/RSEf2OdWyA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\user\\Source\\Repos\\project\\Liquid\\Liquid.csproj",
+  "projectFilePath": "C:\\Users\\user\\source\\repos\\project\\Liquid\\LiquidWebApp.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }
