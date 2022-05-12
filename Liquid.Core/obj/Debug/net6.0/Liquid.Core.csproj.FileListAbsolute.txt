@@ -26,3 +26,17 @@ C:\Users\user\Source\Repos\project\Liquid.Core\obj\Debug\net6.0\refint\Liquid.Co
 C:\Users\user\Source\Repos\project\Liquid.Core\obj\Debug\net6.0\Liquid.Core.pdb
 C:\Users\user\source\repos\project\Liquid.Core\obj\Debug\net6.0\Liquid.Core.genruntimeconfig.cache
 C:\Users\user\source\repos\project\Liquid.Core\obj\Debug\net6.0\ref\Liquid.Core.dll
+C:\Users\user\Desktop\Project\Liquid.Core\bin\Debug\net6.0\Liquid.Core.deps.json
+C:\Users\user\Desktop\Project\Liquid.Core\bin\Debug\net6.0\Liquid.Core.runtimeconfig.json
+C:\Users\user\Desktop\Project\Liquid.Core\bin\Debug\net6.0\Liquid.Core.dll
+C:\Users\user\Desktop\Project\Liquid.Core\bin\Debug\net6.0\Liquid.Core.pdb
+C:\Users\user\Desktop\Project\Liquid.Core\obj\Debug\net6.0\Liquid.Core.csproj.AssemblyReference.cache
+C:\Users\user\Desktop\Project\Liquid.Core\obj\Debug\net6.0\Liquid.Core.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\user\Desktop\Project\Liquid.Core\obj\Debug\net6.0\Liquid.Core.AssemblyInfoInputs.cache
+C:\Users\user\Desktop\Project\Liquid.Core\obj\Debug\net6.0\Liquid.Core.AssemblyInfo.cs
+C:\Users\user\Desktop\Project\Liquid.Core\obj\Debug\net6.0\Liquid.Core.csproj.CoreCompileInputs.cache
+C:\Users\user\Desktop\Project\Liquid.Core\obj\Debug\net6.0\Liquid.Core.dll
+C:\Users\user\Desktop\Project\Liquid.Core\obj\Debug\net6.0\refint\Liquid.Core.dll
+C:\Users\user\Desktop\Project\Liquid.Core\obj\Debug\net6.0\Liquid.Core.pdb
+C:\Users\user\Desktop\Project\Liquid.Core\obj\Debug\net6.0\Liquid.Core.genruntimeconfig.cache
+C:\Users\user\Desktop\Project\Liquid.Core\obj\Debug\net6.0\ref\Liquid.Core.dll

@@ -1943,11 +1943,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\user\\Source\\Repos\\project\\Liquid.Repos\\Liquid.Repos.csproj",
+      "projectUniqueName": "C:\\Users\\user\\Desktop\\Project\\Liquid.Repos\\Liquid.Repos.csproj",
       "projectName": "Liquid.Repos",
-      "projectPath": "C:\\Users\\user\\Source\\Repos\\project\\Liquid.Repos\\Liquid.Repos.csproj",
+      "projectPath": "C:\\Users\\user\\Desktop\\Project\\Liquid.Repos\\Liquid.Repos.csproj",
       "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\user\\Source\\Repos\\project\\Liquid.Repos\\obj\\",
+      "outputPath": "C:\\Users\\user\\Desktop\\Project\\Liquid.Repos\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\user\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -1964,8 +1964,8 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Users\\user\\Source\\Repos\\project\\Liquid.Core\\Liquid.Core.csproj": {
-              "projectPath": "C:\\Users\\user\\Source\\Repos\\project\\Liquid.Core\\Liquid.Core.csproj"
+            "C:\\Users\\user\\Desktop\\Project\\Liquid.Core\\Liquid.Core.csproj": {
+              "projectPath": "C:\\Users\\user\\Desktop\\Project\\Liquid.Core\\Liquid.Core.csproj"
             }
           }
         }
