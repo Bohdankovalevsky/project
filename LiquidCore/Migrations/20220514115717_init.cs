@@ -161,8 +161,8 @@ namespace LiquidCore.Migrations
                 columns: new[] { "Id", "ConcurrencyStamp", "Name", "NormalizedName" },
                 values: new object[,]
                 {
-                    { "5f81ce5a-0f67-4120-bfb3-d3fd004b1662", "8e92f23f-8924-4a7a-a11c-3d607b5ba54c", "User", "USER" },
-                    { "8e92f23f-8924-4a7a-a11c-3d607b5ba54c", "8e92f23f-8924-4a7a-a11c-3d607b5ba54c", "Admin", "ADMIN" }
+                    { "19a82de3-6cc1-4eea-bb1a-856f2f7c5194", "eb2ddc88-e495-43bc-b87b-ac607b398520", "User", "USER" },
+                    { "eb2ddc88-e495-43bc-b87b-ac607b398520", "eb2ddc88-e495-43bc-b87b-ac607b398520", "Admin", "ADMIN" }
                 });
 
             migrationBuilder.InsertData(
@@ -170,24 +170,19 @@ namespace LiquidCore.Migrations
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "Firstname", "Lastname", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
                 values: new object[,]
                 {
-                    { "6f5ac766-cb5c-4b11-808d-db66dfa7454b", 0, "ca5feb30-45e4-4ff8-acab-f85aa9faa28f", "admin@liquid.com", true, null, null, false, null, null, "admin@liquid.com", "AQAAAAEAACcQAAAAEMqcHjspvVzfd8DB4QUu6lZZaPyZxWjUap1M+K0t6lmPBtWmTCe0Q4zrei/fdTnf3Q==", null, false, "c4f4be34-9044-4a82-a617-a7e48bab92db", false, "admin@liquid.com" },
-                    { "84c74a57-b4cd-4cc6-bb21-1f0ef9959ffb", 0, "9bd668fa-ca34-4612-8d81-a085eda1ffd0", "user@liquid.com", true, null, null, false, null, null, "user@liquid.com", "AQAAAAEAACcQAAAAEDQLQg3u/U/PRag9yFc/n70ZNvjzN9am6A1VmWCsH8Pd6hJUrv4Woh8GgxsdrADvhw==", null, false, "516a1f8b-0edd-42b5-9f7c-8c1e07b696e1", false, "user@liquid.com" }
+                    { "37126736-684c-4014-8908-5e3365be2531", 0, "566a78ca-03b0-4d8f-b5a1-8125ea69050d", "admin@liquid.com", true, null, null, false, null, null, "admin@liquid.com", "AQAAAAEAACcQAAAAEJ+DsiqQqGPVlSZnFoj8wCz7q2sULK/RDu+WUihy6Qi9BsO0eeCbqY6ymd7yU4Anuw==", null, false, "40556fa4-241c-43f8-b12b-ada88472028d", false, "admin@liquid.com" },
+                    { "f340ff39-2f94-4c45-93a7-63e645f590ce", 0, "88968042-2858-4498-b920-a43f8d6e20da", "user@liquid.com", true, null, null, false, null, null, "user@liquid.com", "AQAAAAEAACcQAAAAEDNgfLeI0zvDPXNvI3dQsi9hGsh8ahDooDxrveL7GyHQs7M0+kZDs+m1YQRS6a00IQ==", null, false, "8c59e259-5ba3-480f-aaec-418a388e1ddc", false, "user@liquid.com" }
                 });
 
             migrationBuilder.InsertData(
                 table: "AspNetUserRoles",
                 columns: new[] { "RoleId", "UserId" },
-                values: new object[] { "5f81ce5a-0f67-4120-bfb3-d3fd004b1662", "6f5ac766-cb5c-4b11-808d-db66dfa7454b" });
+                values: new object[] { "eb2ddc88-e495-43bc-b87b-ac607b398520", "37126736-684c-4014-8908-5e3365be2531" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUserRoles",
                 columns: new[] { "RoleId", "UserId" },
-                values: new object[] { "8e92f23f-8924-4a7a-a11c-3d607b5ba54c", "6f5ac766-cb5c-4b11-808d-db66dfa7454b" });
-
-            migrationBuilder.InsertData(
-                table: "AspNetUserRoles",
-                columns: new[] { "RoleId", "UserId" },
-                values: new object[] { "5f81ce5a-0f67-4120-bfb3-d3fd004b1662", "84c74a57-b4cd-4cc6-bb21-1f0ef9959ffb" });
+                values: new object[] { "19a82de3-6cc1-4eea-bb1a-856f2f7c5194", "f340ff39-2f94-4c45-93a7-63e645f590ce" });
 
             migrationBuilder.CreateIndex(
                 name: "IX_AspNetRoleClaims_RoleId",

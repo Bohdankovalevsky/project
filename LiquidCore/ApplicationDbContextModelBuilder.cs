@@ -23,6 +23,7 @@ namespace LiquidWebApp.Data
                 },
                 new IdentityRole
                 {
+                    
                     Id = USER_ROLE_ID,
                     Name = "User",
                     NormalizedName = "USER",
@@ -63,18 +64,15 @@ namespace LiquidWebApp.Data
                     RoleId = USER_ROLE_ID,
                     UserId = USER_ID
                 },
-               new IdentityUserRole<string>
-               {
-                   RoleId = ADMIN_ROLE_ID,
-                   UserId = ADMIN_ID
-               },
-              new IdentityUserRole<string>
-              {
-                  RoleId = USER_ROLE_ID,
-                  UserId = ADMIN_ID
-              }
 
-                );
+                new IdentityUserRole<string>
+                {
+                    RoleId = ADMIN_ROLE_ID,
+                    UserId = ADMIN_ID
+                }
+
+
+                ) ;
 
             
 

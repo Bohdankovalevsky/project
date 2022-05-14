@@ -17,6 +17,10 @@ namespace LiquidWebApp.Controllers
         {
             return View();
         }
+        public IActionResult LiquidsShowPage()
+        {
+            return View();
+        }
 
         public IActionResult Privacy()
         {

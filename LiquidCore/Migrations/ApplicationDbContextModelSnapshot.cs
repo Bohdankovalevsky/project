@@ -95,31 +95,31 @@ namespace LiquidCore.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "6f5ac766-cb5c-4b11-808d-db66dfa7454b",
+                            Id = "37126736-684c-4014-8908-5e3365be2531",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "ca5feb30-45e4-4ff8-acab-f85aa9faa28f",
+                            ConcurrencyStamp = "566a78ca-03b0-4d8f-b5a1-8125ea69050d",
                             Email = "admin@liquid.com",
                             EmailConfirmed = true,
                             LockoutEnabled = false,
                             NormalizedUserName = "admin@liquid.com",
-                            PasswordHash = "AQAAAAEAACcQAAAAEMqcHjspvVzfd8DB4QUu6lZZaPyZxWjUap1M+K0t6lmPBtWmTCe0Q4zrei/fdTnf3Q==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEJ+DsiqQqGPVlSZnFoj8wCz7q2sULK/RDu+WUihy6Qi9BsO0eeCbqY6ymd7yU4Anuw==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "c4f4be34-9044-4a82-a617-a7e48bab92db",
+                            SecurityStamp = "40556fa4-241c-43f8-b12b-ada88472028d",
                             TwoFactorEnabled = false,
                             UserName = "admin@liquid.com"
                         },
                         new
                         {
-                            Id = "84c74a57-b4cd-4cc6-bb21-1f0ef9959ffb",
+                            Id = "f340ff39-2f94-4c45-93a7-63e645f590ce",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "9bd668fa-ca34-4612-8d81-a085eda1ffd0",
+                            ConcurrencyStamp = "88968042-2858-4498-b920-a43f8d6e20da",
                             Email = "user@liquid.com",
                             EmailConfirmed = true,
                             LockoutEnabled = false,
                             NormalizedUserName = "user@liquid.com",
-                            PasswordHash = "AQAAAAEAACcQAAAAEDQLQg3u/U/PRag9yFc/n70ZNvjzN9am6A1VmWCsH8Pd6hJUrv4Woh8GgxsdrADvhw==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEDNgfLeI0zvDPXNvI3dQsi9hGsh8ahDooDxrveL7GyHQs7M0+kZDs+m1YQRS6a00IQ==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "516a1f8b-0edd-42b5-9f7c-8c1e07b696e1",
+                            SecurityStamp = "8c59e259-5ba3-480f-aaec-418a388e1ddc",
                             TwoFactorEnabled = false,
                             UserName = "user@liquid.com"
                         });
@@ -154,15 +154,15 @@ namespace LiquidCore.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "8e92f23f-8924-4a7a-a11c-3d607b5ba54c",
-                            ConcurrencyStamp = "8e92f23f-8924-4a7a-a11c-3d607b5ba54c",
+                            Id = "eb2ddc88-e495-43bc-b87b-ac607b398520",
+                            ConcurrencyStamp = "eb2ddc88-e495-43bc-b87b-ac607b398520",
                             Name = "Admin",
                             NormalizedName = "ADMIN"
                         },
                         new
                         {
-                            Id = "5f81ce5a-0f67-4120-bfb3-d3fd004b1662",
-                            ConcurrencyStamp = "8e92f23f-8924-4a7a-a11c-3d607b5ba54c",
+                            Id = "19a82de3-6cc1-4eea-bb1a-856f2f7c5194",
+                            ConcurrencyStamp = "eb2ddc88-e495-43bc-b87b-ac607b398520",
                             Name = "User",
                             NormalizedName = "USER"
                         });
@@ -259,18 +259,13 @@ namespace LiquidCore.Migrations
                     b.HasData(
                         new
                         {
-                            UserId = "84c74a57-b4cd-4cc6-bb21-1f0ef9959ffb",
-                            RoleId = "5f81ce5a-0f67-4120-bfb3-d3fd004b1662"
+                            UserId = "f340ff39-2f94-4c45-93a7-63e645f590ce",
+                            RoleId = "19a82de3-6cc1-4eea-bb1a-856f2f7c5194"
                         },
                         new
                         {
-                            UserId = "6f5ac766-cb5c-4b11-808d-db66dfa7454b",
-                            RoleId = "8e92f23f-8924-4a7a-a11c-3d607b5ba54c"
-                        },
-                        new
-                        {
-                            UserId = "6f5ac766-cb5c-4b11-808d-db66dfa7454b",
-                            RoleId = "5f81ce5a-0f67-4120-bfb3-d3fd004b1662"
+                            UserId = "37126736-684c-4014-8908-5e3365be2531",
+                            RoleId = "eb2ddc88-e495-43bc-b87b-ac607b398520"
                         });
                 });
 
