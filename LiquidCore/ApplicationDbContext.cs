@@ -15,6 +15,6 @@ namespace LiquidWebApp.Data
             builder.Seed();
             base.OnModelCreating(builder);
         }
-
+        public DbSet<LiquidINfo> LInfo { get; set; }
     }
 }

@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace LiquidCore.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20220512214528_init")]
-    partial class init
+    [Migration("20220513122258_data")]
+    partial class data
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -97,34 +97,134 @@ namespace LiquidCore.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "6f5ac766-cb5c-4b11-808d-db66dfa7454b",
+                            Id = "0fd99424-3a01-4818-9fbb-ef19de9dd699",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "ca5feb30-45e4-4ff8-acab-f85aa9faa28f",
+                            ConcurrencyStamp = "89e51e73-7d79-42ba-979d-262173e6a185",
                             Email = "admin@liquid.com",
                             EmailConfirmed = true,
                             LockoutEnabled = false,
                             NormalizedUserName = "admin@liquid.com",
-                            PasswordHash = "AQAAAAEAACcQAAAAEMqcHjspvVzfd8DB4QUu6lZZaPyZxWjUap1M+K0t6lmPBtWmTCe0Q4zrei/fdTnf3Q==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEPZsU18Rr2Kx+qmuOEFUyQYvJm63j+zBMofK9TRwnVIf0X34azp360sorePnV6bfPQ==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "c4f4be34-9044-4a82-a617-a7e48bab92db",
+                            SecurityStamp = "203747a7-993c-4bd7-8423-685a69099fa4",
                             TwoFactorEnabled = false,
                             UserName = "admin@liquid.com"
                         },
                         new
                         {
-                            Id = "84c74a57-b4cd-4cc6-bb21-1f0ef9959ffb",
+                            Id = "b64797bb-3fad-4f5a-9335-57ff97c0b407",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "9bd668fa-ca34-4612-8d81-a085eda1ffd0",
+                            ConcurrencyStamp = "30795362-5d87-4b3b-b6bc-c1d21d2daeac",
                             Email = "user@liquid.com",
                             EmailConfirmed = true,
                             LockoutEnabled = false,
                             NormalizedUserName = "user@liquid.com",
-                            PasswordHash = "AQAAAAEAACcQAAAAEDQLQg3u/U/PRag9yFc/n70ZNvjzN9am6A1VmWCsH8Pd6hJUrv4Woh8GgxsdrADvhw==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEEFEqFkLK6+LE7OQzrF+b8aH5bnn22c8JX4j7lHZRYPsXRkvhP60TABRSYgIHXZH9A==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "516a1f8b-0edd-42b5-9f7c-8c1e07b696e1",
+                            SecurityStamp = "2344fb6d-f420-4ae7-8775-536ebac81e04",
                             TwoFactorEnabled = false,
                             UserName = "user@liquid.com"
                         });
+                });
+
+            modelBuilder.Entity("LiquidCore.Capacity", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<int?>("Ml")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Capacity");
+                });
+
+            modelBuilder.Entity("LiquidCore.Company", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<string>("CompanyName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Company");
+                });
+
+            modelBuilder.Entity("LiquidCore.LiquidINfo", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<int?>("capacityId")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("companyId")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("nicotineId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("taste")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int?>("vGPGId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("capacityId");
+
+                    b.HasIndex("companyId");
+
+                    b.HasIndex("nicotineId");
+
+                    b.HasIndex("vGPGId");
+
+                    b.ToTable("LInfo");
+                });
+
+            modelBuilder.Entity("LiquidCore.Nicotine", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<int?>("Mg")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Nicotine");
+                });
+
+            modelBuilder.Entity("LiquidCore.VGPG", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<string>("VgPg")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("VGPG");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
@@ -156,15 +256,15 @@ namespace LiquidCore.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "8e92f23f-8924-4a7a-a11c-3d607b5ba54c",
-                            ConcurrencyStamp = "8e92f23f-8924-4a7a-a11c-3d607b5ba54c",
+                            Id = "4eec1cc6-a2ff-4cde-9990-6bd067c9245a",
+                            ConcurrencyStamp = "4eec1cc6-a2ff-4cde-9990-6bd067c9245a",
                             Name = "Admin",
                             NormalizedName = "ADMIN"
                         },
                         new
                         {
-                            Id = "5f81ce5a-0f67-4120-bfb3-d3fd004b1662",
-                            ConcurrencyStamp = "8e92f23f-8924-4a7a-a11c-3d607b5ba54c",
+                            Id = "24c81e19-137b-4f1d-9082-0a700ce5b479",
+                            ConcurrencyStamp = "4eec1cc6-a2ff-4cde-9990-6bd067c9245a",
                             Name = "User",
                             NormalizedName = "USER"
                         });
@@ -261,18 +361,18 @@ namespace LiquidCore.Migrations
                     b.HasData(
                         new
                         {
-                            UserId = "84c74a57-b4cd-4cc6-bb21-1f0ef9959ffb",
-                            RoleId = "5f81ce5a-0f67-4120-bfb3-d3fd004b1662"
+                            UserId = "b64797bb-3fad-4f5a-9335-57ff97c0b407",
+                            RoleId = "24c81e19-137b-4f1d-9082-0a700ce5b479"
                         },
                         new
                         {
-                            UserId = "6f5ac766-cb5c-4b11-808d-db66dfa7454b",
-                            RoleId = "8e92f23f-8924-4a7a-a11c-3d607b5ba54c"
+                            UserId = "0fd99424-3a01-4818-9fbb-ef19de9dd699",
+                            RoleId = "4eec1cc6-a2ff-4cde-9990-6bd067c9245a"
                         },
                         new
                         {
-                            UserId = "6f5ac766-cb5c-4b11-808d-db66dfa7454b",
-                            RoleId = "5f81ce5a-0f67-4120-bfb3-d3fd004b1662"
+                            UserId = "0fd99424-3a01-4818-9fbb-ef19de9dd699",
+                            RoleId = "24c81e19-137b-4f1d-9082-0a700ce5b479"
                         });
                 });
 
@@ -295,6 +395,33 @@ namespace LiquidCore.Migrations
                     b.HasKey("UserId", "LoginProvider", "Name");
 
                     b.ToTable("AspNetUserTokens", (string)null);
+                });
+
+            modelBuilder.Entity("LiquidCore.LiquidINfo", b =>
+                {
+                    b.HasOne("LiquidCore.Capacity", "capacity")
+                        .WithMany()
+                        .HasForeignKey("capacityId");
+
+                    b.HasOne("LiquidCore.Company", "company")
+                        .WithMany()
+                        .HasForeignKey("companyId");
+
+                    b.HasOne("LiquidCore.Nicotine", "nicotine")
+                        .WithMany()
+                        .HasForeignKey("nicotineId");
+
+                    b.HasOne("LiquidCore.VGPG", "vGPG")
+                        .WithMany()
+                        .HasForeignKey("vGPGId");
+
+                    b.Navigation("capacity");
+
+                    b.Navigation("company");
+
+                    b.Navigation("nicotine");
+
+                    b.Navigation("vGPG");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>

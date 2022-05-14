@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace LiquidCore.Migrations
 {
-    public partial class init : Migration
+    public partial class data : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -48,6 +48,58 @@ namespace LiquidCore.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_AspNetUsers", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Capacity",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Ml = table.Column<int>(type: "int", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Capacity", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Company",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    CompanyName = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Company", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Nicotine",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Mg = table.Column<int>(type: "int", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Nicotine", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "VGPG",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    VgPg = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_VGPG", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -156,13 +208,50 @@ namespace LiquidCore.Migrations
                         onDelete: ReferentialAction.Cascade);
                 });
 
+            migrationBuilder.CreateTable(
+                name: "LInfo",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    taste = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    capacityId = table.Column<int>(type: "int", nullable: true),
+                    companyId = table.Column<int>(type: "int", nullable: true),
+                    nicotineId = table.Column<int>(type: "int", nullable: true),
+                    vGPGId = table.Column<int>(type: "int", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_LInfo", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_LInfo_Capacity_capacityId",
+                        column: x => x.capacityId,
+                        principalTable: "Capacity",
+                        principalColumn: "Id");
+                    table.ForeignKey(
+                        name: "FK_LInfo_Company_companyId",
+                        column: x => x.companyId,
+                        principalTable: "Company",
+                        principalColumn: "Id");
+                    table.ForeignKey(
+                        name: "FK_LInfo_Nicotine_nicotineId",
+                        column: x => x.nicotineId,
+                        principalTable: "Nicotine",
+                        principalColumn: "Id");
+                    table.ForeignKey(
+                        name: "FK_LInfo_VGPG_vGPGId",
+                        column: x => x.vGPGId,
+                        principalTable: "VGPG",
+                        principalColumn: "Id");
+                });
+
             migrationBuilder.InsertData(
                 table: "AspNetRoles",
                 columns: new[] { "Id", "ConcurrencyStamp", "Name", "NormalizedName" },
                 values: new object[,]
                 {
-                    { "5f81ce5a-0f67-4120-bfb3-d3fd004b1662", "8e92f23f-8924-4a7a-a11c-3d607b5ba54c", "User", "USER" },
-                    { "8e92f23f-8924-4a7a-a11c-3d607b5ba54c", "8e92f23f-8924-4a7a-a11c-3d607b5ba54c", "Admin", "ADMIN" }
+                    { "24c81e19-137b-4f1d-9082-0a700ce5b479", "4eec1cc6-a2ff-4cde-9990-6bd067c9245a", "User", "USER" },
+                    { "4eec1cc6-a2ff-4cde-9990-6bd067c9245a", "4eec1cc6-a2ff-4cde-9990-6bd067c9245a", "Admin", "ADMIN" }
                 });
 
             migrationBuilder.InsertData(
@@ -170,24 +259,24 @@ namespace LiquidCore.Migrations
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "Firstname", "Lastname", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
                 values: new object[,]
                 {
-                    { "6f5ac766-cb5c-4b11-808d-db66dfa7454b", 0, "ca5feb30-45e4-4ff8-acab-f85aa9faa28f", "admin@liquid.com", true, null, null, false, null, null, "admin@liquid.com", "AQAAAAEAACcQAAAAEMqcHjspvVzfd8DB4QUu6lZZaPyZxWjUap1M+K0t6lmPBtWmTCe0Q4zrei/fdTnf3Q==", null, false, "c4f4be34-9044-4a82-a617-a7e48bab92db", false, "admin@liquid.com" },
-                    { "84c74a57-b4cd-4cc6-bb21-1f0ef9959ffb", 0, "9bd668fa-ca34-4612-8d81-a085eda1ffd0", "user@liquid.com", true, null, null, false, null, null, "user@liquid.com", "AQAAAAEAACcQAAAAEDQLQg3u/U/PRag9yFc/n70ZNvjzN9am6A1VmWCsH8Pd6hJUrv4Woh8GgxsdrADvhw==", null, false, "516a1f8b-0edd-42b5-9f7c-8c1e07b696e1", false, "user@liquid.com" }
+                    { "0fd99424-3a01-4818-9fbb-ef19de9dd699", 0, "89e51e73-7d79-42ba-979d-262173e6a185", "admin@liquid.com", true, null, null, false, null, null, "admin@liquid.com", "AQAAAAEAACcQAAAAEPZsU18Rr2Kx+qmuOEFUyQYvJm63j+zBMofK9TRwnVIf0X34azp360sorePnV6bfPQ==", null, false, "203747a7-993c-4bd7-8423-685a69099fa4", false, "admin@liquid.com" },
+                    { "b64797bb-3fad-4f5a-9335-57ff97c0b407", 0, "30795362-5d87-4b3b-b6bc-c1d21d2daeac", "user@liquid.com", true, null, null, false, null, null, "user@liquid.com", "AQAAAAEAACcQAAAAEEFEqFkLK6+LE7OQzrF+b8aH5bnn22c8JX4j7lHZRYPsXRkvhP60TABRSYgIHXZH9A==", null, false, "2344fb6d-f420-4ae7-8775-536ebac81e04", false, "user@liquid.com" }
                 });
 
             migrationBuilder.InsertData(
                 table: "AspNetUserRoles",
                 columns: new[] { "RoleId", "UserId" },
-                values: new object[] { "5f81ce5a-0f67-4120-bfb3-d3fd004b1662", "6f5ac766-cb5c-4b11-808d-db66dfa7454b" });
+                values: new object[] { "24c81e19-137b-4f1d-9082-0a700ce5b479", "0fd99424-3a01-4818-9fbb-ef19de9dd699" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUserRoles",
                 columns: new[] { "RoleId", "UserId" },
-                values: new object[] { "8e92f23f-8924-4a7a-a11c-3d607b5ba54c", "6f5ac766-cb5c-4b11-808d-db66dfa7454b" });
+                values: new object[] { "4eec1cc6-a2ff-4cde-9990-6bd067c9245a", "0fd99424-3a01-4818-9fbb-ef19de9dd699" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUserRoles",
                 columns: new[] { "RoleId", "UserId" },
-                values: new object[] { "5f81ce5a-0f67-4120-bfb3-d3fd004b1662", "84c74a57-b4cd-4cc6-bb21-1f0ef9959ffb" });
+                values: new object[] { "24c81e19-137b-4f1d-9082-0a700ce5b479", "b64797bb-3fad-4f5a-9335-57ff97c0b407" });
 
             migrationBuilder.CreateIndex(
                 name: "IX_AspNetRoleClaims_RoleId",
@@ -227,6 +316,26 @@ namespace LiquidCore.Migrations
                 column: "NormalizedUserName",
                 unique: true,
                 filter: "[NormalizedUserName] IS NOT NULL");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_LInfo_capacityId",
+                table: "LInfo",
+                column: "capacityId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_LInfo_companyId",
+                table: "LInfo",
+                column: "companyId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_LInfo_nicotineId",
+                table: "LInfo",
+                column: "nicotineId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_LInfo_vGPGId",
+                table: "LInfo",
+                column: "vGPGId");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
@@ -247,10 +356,25 @@ namespace LiquidCore.Migrations
                 name: "AspNetUserTokens");
 
             migrationBuilder.DropTable(
+                name: "LInfo");
+
+            migrationBuilder.DropTable(
                 name: "AspNetRoles");
 
             migrationBuilder.DropTable(
                 name: "AspNetUsers");
+
+            migrationBuilder.DropTable(
+                name: "Capacity");
+
+            migrationBuilder.DropTable(
+                name: "Company");
+
+            migrationBuilder.DropTable(
+                name: "Nicotine");
+
+            migrationBuilder.DropTable(
+                name: "VGPG");
         }
     }
 }
