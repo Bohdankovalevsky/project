@@ -10,6 +10,7 @@ namespace LiquidCore
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
         public string? taste { get; set; }
+        public string? picture { get; set; }
         public Capacity? capacity { get; set; }
         public Company? company { get; set; }
         public Nicotine? nicotine { get; set; }

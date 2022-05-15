@@ -4,6 +4,7 @@ using System.Diagnostics;
 using LiquidRepositories;
 using LiquidCore;
 using LiquidWebApp.Data;
+using Microsoft.EntityFrameworkCore;
 
 namespace LiquidWebApp.Controllers
 {/*
@@ -51,7 +52,17 @@ namespace LiquidWebApp.Controllers
         {
            _ctx.LInfo.Add(liquidinfo);
             _ctx.SaveChanges();
-            return RedirectToAction("Index","LiquidsShowPage");
+            return RedirectToAction("LiquidsShowPage","Liquid");
+        }
+       [HttpGet]
+                  public IActionResult LiquidsShowPage()
+        {
+            return View(_ctx.LInfo
+                .Include(d => d.capacity)
+                .Include(d => d.company)
+                .Include(d => d.nicotine)
+                .Include(d => d.vGPG).
+                ToList());
         }
     }
 }

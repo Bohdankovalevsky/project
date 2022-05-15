@@ -33,7 +33,8 @@ namespace LiquidRepositories
             _ctx.LInfo.First(x => x.Id == model.Id).company = model.company;
             _ctx.LInfo.First(x => x.Id == model.Id).nicotine = model.nicotine;
             _ctx.LInfo.First(x => x.Id == model.Id).vGPG = model.vGPG;
-            _ctx.LInfo.First(x => x.Id == model.Id).description=model.description;   
+            _ctx.LInfo.First(x => x.Id == model.Id).description=model.description;
+            _ctx.LInfo.First(x => x.Id == model.Id).picture = model.picture;
             await _ctx.SaveChangesAsync();
         }
         public async Task CreateAsync(LiquidINfo model)
@@ -41,6 +42,10 @@ namespace LiquidRepositories
             await _ctx.LInfo.AddAsync(model);
             await _ctx.SaveChangesAsync();
         }
-       
+
+        /* public IEnumerable<LiquidINfo> GetAll()
+         {
+             return _ctx.LInfo.ToList();
+         }*/
     }
 }
