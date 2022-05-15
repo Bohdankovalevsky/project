@@ -17,6 +17,11 @@ namespace LiquidWebApp.Controllers
         {
             return View();
         }
+        [HttpGet]
+        public IActionResult Edit(int num)
+        {
+            return View();
+        }
         public IActionResult LiquidsShowPage()
         {
             return View();

@@ -14,6 +14,7 @@ namespace LiquidCore
         public Company? company { get; set; }
         public Nicotine? nicotine { get; set; }
         public VGPG? vGPG { get; set; }
+        public string? description { get; set; }
 
     }
 }
