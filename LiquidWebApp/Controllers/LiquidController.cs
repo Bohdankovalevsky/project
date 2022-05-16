@@ -37,10 +37,18 @@ namespace LiquidWebApp.Controllers
 
     public class LiquidController : Controller
     {
-        private readonly ApplicationDbContext _ctx;
-        public LiquidController(ApplicationDbContext applicationDbContext)
+        private readonly LiquidInfoRepository _liquidInfoRepository;
+        private readonly CapacityRepository _capacityRepository;
+        private readonly CompanyRepository _companyRepository;
+        private readonly NicotineRepository _nicotineRepository;
+        private readonly VGPGRepository _vGPGRepository;
+        public LiquidController(LiquidInfoRepository liquidInfoRepository, CapacityRepository capacityRepository, CompanyRepository companyRepository, NicotineRepository nicotineRepository, VGPGRepository vGPGRepository)
         {
-            _ctx = applicationDbContext;
+            _liquidInfoRepository = liquidInfoRepository;
+            _capacityRepository = capacityRepository;
+            _companyRepository = companyRepository;
+            _nicotineRepository = nicotineRepository;
+            _vGPGRepository = vGPGRepository;          
         }
         [HttpGet]
         public IActionResult Add()
@@ -50,19 +58,17 @@ namespace LiquidWebApp.Controllers
         [HttpPost]
         public IActionResult Add(LiquidINfo liquidinfo)
         {
-           _ctx.LInfo.Add(liquidinfo);
-            _ctx.SaveChanges();
+            int capid = _capacityRepository.Set(liquidinfo.capacity.Ml).Id;
+            int comid = _companyRepository.Set(liquidinfo.company.CompanyName).Id;
+            int nicid = _nicotineRepository.Set(liquidinfo.nicotine.Mg).Id;
+            int vgpgid = _vGPGRepository.Set(liquidinfo.vGPG.VgPg).Id;
+           _liquidInfoRepository.CreateAsync(liquidinfo, capid, comid,nicid,vgpgid);
             return RedirectToAction("LiquidsShowPage","Liquid");
         }
        [HttpGet]
-                  public IActionResult LiquidsShowPage()
+        public IActionResult LiquidsShowPage()
         {
-            return View(_ctx.LInfo
-                .Include(d => d.capacity)
-                .Include(d => d.company)
-                .Include(d => d.nicotine)
-                .Include(d => d.vGPG).
-                ToList());
+            return View(_liquidInfoRepository.GetAll());
         }
     }
 }
