@@ -16,5 +16,9 @@ namespace LiquidWebApp.Data
             base.OnModelCreating(builder);
         }
         public DbSet<LiquidINfo> LInfo { get; set; }
+        public DbSet<Capacity> capacities { get; set; } 
+        public DbSet<Company> companies { get; set; }
+        public DbSet<Nicotine> nicotines { get; set; } 
+        public DbSet<VGPG> vgps { get; set; }
     }
 }

@@ -33,13 +33,40 @@ namespace LiquidRepositories
             _ctx.LInfo.First(x => x.Id == model.Id).company = model.company;
             _ctx.LInfo.First(x => x.Id == model.Id).nicotine = model.nicotine;
             _ctx.LInfo.First(x => x.Id == model.Id).vGPG = model.vGPG;
+            _ctx.LInfo.First(x => x.Id == model.Id).description=model.description;
+            _ctx.LInfo.First(x => x.Id == model.Id).picture = model.picture;
             await _ctx.SaveChangesAsync();
         }
-        public async Task CreateAsync(LiquidINfo model)
+        public async Task CreateAsync(LiquidINfo model, int capid, int comid, int nicid, int vgpgid)
         {
+            model.capacity= _ctx.capacities.Find(capid);
+            model.company = _ctx.companies.Find(comid);
+            model.nicotine = _ctx.nicotines.Find(nicid);
+            model.vGPG = _ctx.vgps.Find(vgpgid);
+
             await _ctx.LInfo.AddAsync(model);
             await _ctx.SaveChangesAsync();
         }
-       
+
+        public IEnumerable<LiquidINfo> GetAll()
+        {
+             return _ctx.LInfo
+                .Include(d => d.capacity)
+                .Include(d => d.company)
+                .Include(d => d.nicotine)
+                .Include(d => d.vGPG).
+                ToList();
+        }
+        
+        /*public void Add(FullInfo info, int CPTId, int EAId, int FBSId, int HDId, int OPId, int RECGId, int SEXId, int STSId)
+        {
+           info.ChestPainType = ctx.ChestPainTypes.Find(CPTId);
+            info.ExerciseAngina = ctx.ExerciseAnginas.Find(EAId);
+            info.FastingBS = ctx.FastingBs.Find(FBSId);
+            info.heartDisease = ctx.HeartDiseases.Find(HDId);
+            info.Oldpeak = ctx.Oldpeaks.Find(OPId);
+            info.RestingECG = ctx.RestingECGs.Find(RECGId);
+     
+         */
     }
 }
