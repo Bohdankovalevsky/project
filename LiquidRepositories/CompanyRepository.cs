@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace LiquidRepositories
 {
-    public class CompanyRepository
+    public class CompanyRepository: ICompany
     {
         private readonly ApplicationDbContext _ctx;
         public CompanyRepository(ApplicationDbContext ctx)

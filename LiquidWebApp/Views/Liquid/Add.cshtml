@@ -1,7 +1,8 @@
 ﻿@using LiquidCore;
-
+@using Microsoft.AspNetCore.Identity
 @model LiquidINfo
-
+@if(User.Identity.Name=="admin@liquid.com")
+{
 <h1>Додати новий товар </h1>
 <hr />
 
@@ -48,7 +49,11 @@
         @Html.EditorFor(model=>model.picture, new{htmlAttributes = new {@class = "form-control"}} )
     </div>
     </div>
-    <button type="submit" class="btn btn-primary">зберегти </button> 
+    <h1>    </h1>
+    <button type="submit" class="btn btn-outline-primary">зберегти </button> 
 </form>
-
-
+}
+else
+{
+<h1>Вийди звідси, розбійник </h1>
+}

@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace LiquidRepositories
 {
-    public class VGPGRepository
+    public class VGPGRepository : IVGPG
     {
         private readonly ApplicationDbContext _ctx;
         public VGPGRepository(ApplicationDbContext ctx)
