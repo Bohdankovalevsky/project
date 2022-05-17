@@ -9,64 +9,65 @@ using Microsoft.EntityFrameworkCore;
 
 namespace LiquidRepositories
 {
-    public class LiquidInfoRepository
+    public class LiquidInfoRepository :Iliquidinfo
     {
-        private readonly ApplicationDbContext _ctx;
-        public LiquidInfoRepository(ApplicationDbContext ctx)
+        private readonly ApplicationDbContext ctx;
+        public LiquidInfoRepository(ApplicationDbContext cotx)
         {
-            _ctx = ctx;
+            ctx = cotx;
         }
 
         public LiquidINfo Get(int id)
         {
-            return _ctx.LInfo.FirstOrDefault(d => d.Id == id);
+            return ctx.LInfo
+                .Include(l => l.company)
+                .Include(l => l.capacity)
+                .Include(l => l.nicotine)
+                .Include(l => l.vGPG)
+                .FirstOrDefault(d => d.Id == id);
         }
-        public async Task DeleteAsync(int id)
+        public void Delete(int id)
         {
-            _ctx.LInfo.Remove(await _ctx.LInfo.FirstAsync(x => x.Id == id)); 
-            await _ctx.SaveChangesAsync();
+            ctx.LInfo.Remove(ctx.LInfo.Find(id));
+            ctx.SaveChanges();
         }
-        public async Task EditAsync(LiquidINfo model)
+        public void Edit(LiquidINfo model)
         {
-            _ctx.LInfo.First(x => x.Id == model.Id).taste = model.taste;
-            _ctx.LInfo.First(x => x.Id == model.Id).capacity = model.capacity;
-            _ctx.LInfo.First(x => x.Id == model.Id).company = model.company;
-            _ctx.LInfo.First(x => x.Id == model.Id).nicotine = model.nicotine;
-            _ctx.LInfo.First(x => x.Id == model.Id).vGPG = model.vGPG;
-            _ctx.LInfo.First(x => x.Id == model.Id).description=model.description;
-            _ctx.LInfo.First(x => x.Id == model.Id).picture = model.picture;
-            await _ctx.SaveChangesAsync();
+            ctx.LInfo.First(x => x.Id == model.Id).taste = model.taste;
+            ctx.LInfo.First(x => x.Id == model.Id).capacity.Ml = model.capacity.Ml;
+            ctx.LInfo.First(x => x.Id == model.Id).company.CompanyName = model.company.CompanyName;
+            ctx.LInfo.First(x => x.Id == model.Id).nicotine.Mg = model.nicotine.Mg;
+            ctx.LInfo.First(x => x.Id == model.Id).vGPG.VgPg = model.vGPG.VgPg;
+            ctx.LInfo.First(x => x.Id == model.Id).description=model.description;
+            ctx.LInfo.First(x => x.Id == model.Id).picture = model.picture;
+             ctx.SaveChanges();
         }
-        public async Task CreateAsync(LiquidINfo model, int capid, int comid, int nicid, int vgpgid)
+        public void Create(LiquidINfo model, int capid, int comid, int nicid, int vgpgid)
         {
-            model.capacity= _ctx.capacities.Find(capid);
-            model.company = _ctx.companies.Find(comid);
-            model.nicotine = _ctx.nicotines.Find(nicid);
-            model.vGPG = _ctx.vgps.Find(vgpgid);
+            model.capacity= ctx.capacities.Find(capid);
+            model.company = ctx.companies.Find(comid);
+            model.nicotine = ctx.nicotines.Find(nicid);
+            model.vGPG = ctx.vgps.Find(vgpgid);
 
-            await _ctx.LInfo.AddAsync(model);
-            await _ctx.SaveChangesAsync();
+             ctx.LInfo.AddAsync(model);
+             ctx.SaveChanges();
         }
 
         public IEnumerable<LiquidINfo> GetAll()
         {
-             return _ctx.LInfo
+             return ctx.LInfo
                 .Include(d => d.capacity)
                 .Include(d => d.company)
                 .Include(d => d.nicotine)
                 .Include(d => d.vGPG).
                 ToList();
         }
-        
-        /*public void Add(FullInfo info, int CPTId, int EAId, int FBSId, int HDId, int OPId, int RECGId, int SEXId, int STSId)
+        public IEnumerable<LiquidINfo> searcher(string text)
         {
-           info.ChestPainType = ctx.ChestPainTypes.Find(CPTId);
-            info.ExerciseAngina = ctx.ExerciseAnginas.Find(EAId);
-            info.FastingBS = ctx.FastingBs.Find(FBSId);
-            info.heartDisease = ctx.HeartDiseases.Find(HDId);
-            info.Oldpeak = ctx.Oldpeaks.Find(OPId);
-            info.RestingECG = ctx.RestingECGs.Find(RECGId);
-     
-         */
+            return ctx.LInfo.Include(x => x.company).Where(x => x.company.CompanyName.Contains(text) || x.taste.Contains(text)).ToList();
+        }
+
+
+
     }
 }

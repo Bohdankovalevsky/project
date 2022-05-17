@@ -8,7 +8,7 @@ using LiquidWebApp.Data;
 using Microsoft.EntityFrameworkCore;
 namespace LiquidRepositories
 {
-    public class NicotineRepository
+    public class NicotineRepository : INicotine
     {
         private readonly ApplicationDbContext _ctx;
         public NicotineRepository(ApplicationDbContext ctx)

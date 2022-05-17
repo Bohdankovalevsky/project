@@ -2,6 +2,7 @@ using LiquidWebApp.Data;
 using LiquidCore;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using LiquidRepositories;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -13,8 +14,12 @@ builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
 builder.Services.AddDefaultIdentity<AppUser>(options => options.SignIn.RequireConfirmedAccount = true)
     .AddEntityFrameworkStores<ApplicationDbContext>();
-builder.Services.AddControllersWithViews();
-
+builder.Services.AddControllersWithViews(); 
+builder.Services.AddScoped<CapacityRepository>();
+builder.Services.AddScoped<LiquidInfoRepository>();
+builder.Services.AddScoped<CompanyRepository>();
+builder.Services.AddScoped<NicotineRepository>();
+builder.Services.AddScoped<VGPGRepository>();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

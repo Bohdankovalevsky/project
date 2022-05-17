@@ -1,0 +1,24 @@
+﻿@using LiquidCore;
+@using Microsoft.AspNetCore.Identity
+@model LiquidINfo
+<h1>@Model.company.CompanyName @Model.taste </h1>
+<hr />
+<div style="font-size: 35px;">
+<div style="float: left;"><img src="@Model.picture" width="500" height="400"  style="border: 1px solid Gainsboro;
+    padding: 10px;" ></div>
+                    <h1></h1>
+        <div style="font-size: 35px;">
+
+<div ><p> <big>⠀⠀<b>⠀Виробник:</b> @Model.company.CompanyName </big></div> 
+
+<div > <p><big>⠀⠀<b>⠀Смак:</b> @Model.taste </big></div> 
+
+<div ><p> <big>⠀⠀<b>⠀Об'єм:</b> @Model.capacity.Ml</big> </div> 
+
+<div ><p><big>⠀⠀⠀<b>Міцність:</b> @Model.nicotine.Mg</big> </div> 
+
+<div > <p><big>⠀⠀<b>⠀VG/PG:</b> @Model.vGPG.VgPg </big><div>  
+
+</div>
+<br />
+<div style="font-size: 25px;text-left;" ><p><big>⠀⠀⠀<b>Про рідину</b>: @Model.description</big> </div> 

@@ -1,0 +1,25 @@
+﻿@using LiquidCore;
+@using Microsoft.AspNetCore.Identity
+@model LiquidINfo
+@if(User.Identity.Name=="admin@liquid.com")
+{
+<h1>Підтвердіть видалення товару </h1>
+<hr />
+              <div >
+<form method="post"  action =@Url.Action("Remove")>
+    <button type="submit" class="btn btn-outline-primary">Видалити</button> 
+
+    </form>
+    </div>
+    <h1></h1>
+<div >
+<form method="get" action =@Url.Action("LiquidsShowPage")>
+    <button type="submit" class="btn btn-sm btn-outline-secondary"   >Повернутися до каталогу</button> 
+
+    </form>
+            </div>
+}
+else
+{
+<h1>Вийди звідси, розбійник </h1>
+}

@@ -8,7 +8,7 @@ using LiquidWebApp.Data;
 using Microsoft.EntityFrameworkCore;
 namespace LiquidRepositories
 {
-    public class CapacityRepository
+    public class CapacityRepository : ICapacity
     {
         private readonly ApplicationDbContext _ctx;
         public CapacityRepository(ApplicationDbContext ctx)

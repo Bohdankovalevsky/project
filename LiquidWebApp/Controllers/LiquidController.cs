@@ -6,49 +6,27 @@ using LiquidCore;
 using LiquidWebApp.Data;
 using Microsoft.EntityFrameworkCore;
 
+using Microsoft.AspNetCore.Http;
+
 namespace LiquidWebApp.Controllers
-{/*
-    public class LiquidController : Controller
-    {
-        private readonly LiquidInfoRepository _liquidInfoRepository;
-        public LiquidController(LiquidInfoRepository liquidInfoRepository)
-        {
-            _liquidInfoRepository = liquidInfoRepository;
-        }
-
-
-        public async Task<IActionResult> Create()
-        {
-            return View(new LiquidINfo());
-        }
-
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create(LiquidINfo model)
-        {
-            if (ModelState.IsValid)
-            {
-                await _liquidInfoRepository.CreateAsync(model);
-                return RedirectToAction("Index");
-            }
-            return View(model);
-        }
-    }*/
+{
 
     public class LiquidController : Controller
     {
-        private readonly LiquidInfoRepository _liquidInfoRepository;
-        private readonly CapacityRepository _capacityRepository;
-        private readonly CompanyRepository _companyRepository;
-        private readonly NicotineRepository _nicotineRepository;
-        private readonly VGPGRepository _vGPGRepository;
-        public LiquidController(LiquidInfoRepository liquidInfoRepository, CapacityRepository capacityRepository, CompanyRepository companyRepository, NicotineRepository nicotineRepository, VGPGRepository vGPGRepository)
+        private readonly ICapacity capacityRep;
+        private readonly ICompany companyRep;
+        private readonly IVGPG vGPGRep;
+        private readonly INicotine nicotineRep;
+        private readonly Iliquidinfo iliquidinfoRep;
+
+        public LiquidController(CapacityRepository CR, NicotineRepository NR, VGPGRepository vGPG, LiquidInfoRepository iliquidinfo, CompanyRepository CR1)
         {
-            _liquidInfoRepository = liquidInfoRepository;
-            _capacityRepository = capacityRepository;
-            _companyRepository = companyRepository;
-            _nicotineRepository = nicotineRepository;
-            _vGPGRepository = vGPGRepository;          
+            capacityRep = CR;
+            companyRep = CR1;
+            vGPGRep = vGPG;
+            iliquidinfoRep = iliquidinfo;
+            nicotineRep = NR;
+
         }
         [HttpGet]
         public IActionResult Add()
@@ -58,17 +36,58 @@ namespace LiquidWebApp.Controllers
         [HttpPost]
         public IActionResult Add(LiquidINfo liquidinfo)
         {
-            int capid = _capacityRepository.Set(liquidinfo.capacity.Ml).Id;
-            int comid = _companyRepository.Set(liquidinfo.company.CompanyName).Id;
-            int nicid = _nicotineRepository.Set(liquidinfo.nicotine.Mg).Id;
-            int vgpgid = _vGPGRepository.Set(liquidinfo.vGPG.VgPg).Id;
-           _liquidInfoRepository.CreateAsync(liquidinfo, capid, comid,nicid,vgpgid);
-            return RedirectToAction("LiquidsShowPage","Liquid");
+            int capid = capacityRep.Set(liquidinfo.capacity.Ml).Id;
+            int vgpgid = vGPGRep.Set(liquidinfo.vGPG.VgPg).Id;
+            int comid = companyRep.Set(liquidinfo.company.CompanyName).Id;
+            int nicid = nicotineRep.Set(liquidinfo.nicotine.Mg).Id;
+            iliquidinfoRep.Create(liquidinfo, capid, comid, nicid, vgpgid);
+            return View(); //RedirectToAction("LiquidsShowPage", "Liquid");
         }
-       [HttpGet]
-        public IActionResult LiquidsShowPage()
+          [HttpGet]
+           public IActionResult Edit(int Id)
+           {
+               return View(iliquidinfoRep.Get(Id));
+           }
+           [HttpPost]
+           public IActionResult Edit(LiquidINfo liquidinfo)
+           {
+            liquidinfo.vGPG = vGPGRep.Set(liquidinfo.vGPG.VgPg);
+            liquidinfo.nicotine = nicotineRep.Set(liquidinfo.nicotine.Mg);
+            liquidinfo.capacity = capacityRep.Set(liquidinfo.capacity.Ml);
+            liquidinfo.company = companyRep.Set(liquidinfo.company.CompanyName);
+            iliquidinfoRep.Edit(liquidinfo);
+               return RedirectToAction("LiquidsShowPage", "Liquid");
+           }
+           [HttpGet]
+           public IActionResult LiquidsShowPage(IEnumerable <LiquidINfo> liquidINfos)
+           {
+            if (liquidINfos == null)
+                return View(iliquidinfoRep.GetAll());
+            else
+                return View(iliquidinfoRep.GetAll());
+        }
+
+        public IActionResult search(string text)
         {
-            return View(_liquidInfoRepository.GetAll());
+            IEnumerable  <LiquidINfo> list = iliquidinfoRep.searcher(text);
+            return View("LiquidsShowPage",list);
         }
+        [HttpGet]
+        public IActionResult Remove(int id)
+        {
+            return View(iliquidinfoRep.Get(id));
+        }
+        [HttpPost]
+           public IActionResult Remove(LiquidINfo liquidinfo)
+           {
+            
+            iliquidinfoRep.Delete(liquidinfo.Id);
+               return RedirectToAction("LiquidsShowPage", "Liquid");
+           }
+           public IActionResult ViewLiquid(int Id)
+           {
+               return View(iliquidinfoRep.Get(Id));
+           }
+      
     }
 }
