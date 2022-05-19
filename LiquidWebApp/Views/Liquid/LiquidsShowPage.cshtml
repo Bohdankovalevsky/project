@@ -7,7 +7,7 @@
 
 <!doctype html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
@@ -16,84 +16,50 @@
     <title>Album example · Bootstrap v5.1</title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/5.1/examples/album/">
-
-    
-
     <!-- Bootstrap core CSS -->
-<link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
-
-    <style>
-      .bd-placeholder-img {
-        font-size: 1.125rem;
-        text-anchor: middle;
-        -webkit-user-select: none;
-        -moz-user-select: none;
-        user-select: none;
-      }
-
-     
-    </style>
-
-    
-  </head>
-  <body>
-    
+    <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
 
 
-<main>
-      <form class="d-flex" asp-controller="Liquid" asp-action="search">
-                        <input class="form-control me-sm-2" type="search" name="text" placeholder="Введіть текст...." aria-label="Search">
-                        <button class="btn btn-secondary my-2 my-sm-0" type="submit">Шукати</button>
-                    </form>
+</head>
+<body>
+    <main>
+        <form class="d-flex" asp-controller="Liquid" asp-action="search">
+            <input class="form-control me-sm-2" type="search" name="text" placeholder="Введіть текст...." aria-label="Search">
+            <button class="btn btn-secondary my-2 my-sm-0" type="submit">Шукати</button>
+        </form>
 
-    
-  <div class="album py-5 bg-light">
-    <div class="container">
 
-      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
-         
-       @foreach(LiquidINfo liquidINfo in Model )
-
-        {
+        <div class="album py-5 bg-light">
+            <div class="container">
+                <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+                    @foreach (LiquidINfo liquidINfo in Model)
+                    {
                         <div class="col">
                             <div class="card shadow-sm">
-                                <svg class="bd-placeholder-img card-img-top" width="100%" height="20" xmlns="http://www.w3.org/2000/svg" role="img" 
-                                aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><img src="@liquidINfo.picture" ></svg>
+                                <svg class="bd-placeholder-img card-img-top" xmlns="http://www.w3.org/2000/svg" role="img" height="20" width="100%>
+                                 aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"> </svg>
+                                <img src="@liquidINfo.picture" height="200" width="300" style="display: block; margin-left: auto; margin-right: auto;">
 
                                 <div class="card-body">
-                                    
-                                    <p class="card-text" >@liquidINfo.company.CompanyName @liquidINfo.taste</p>
+                                    <p class="card-text">@liquidINfo.company.CompanyName @liquidINfo.taste</p>
                                     <div class="d-flex justify-content-between align-items-center">
-
-                                        
-                                        
                                         <div class="btn-group">
-                                           <a href=" ViewLiquid/@liquidINfo.Id"> <button type="button" class="btn btn-sm btn-outline-secondary">Детальніше</button></a>
-                                            @if(User.Identity.Name=="admin@liquid.com")
+                                            <a href=" ViewLiquid/@liquidINfo.Id"> <button type="button" class="btn btn-sm btn-outline-secondary">Детальніше</button></a>
+                                            @if (User.Identity.Name == "admin@liquid.com")
                                             {
-                                     <a href="edit/@liquidINfo.Id"> <button type="button" class="btn btn-sm btn-outline-secondary">Редагувати</button></a>
-                                       <a asp-controller="liquid" asp-action="remove" asp-route-id="@liquidINfo.Id"> <button type="button" class="btn btn-sm btn-outline-secondary">Видалити</button></a>
-                                      }
+                                                <a href="edit/@liquidINfo.Id"> <button type="button" class="btn btn-sm btn-outline-secondary" style="margin-left: 10px">Редагувати</button></a>
+                                                <a asp-controller="liquid" asp-action="remove" asp-route-id="@liquidINfo.Id"> <button type="button" class="btn btn-sm btn-outline-secondary" style="margin-left: 10px">Видалити</button></a>
+                                            }
                                         </div>
-                                        
-
-                                        
-              </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                </div>
             </div>
-          </div>
         </div>
-        }
-
-        
-      </div>
-    </div>
-  </div>
-
-
-</main>
-
+    </main>
     <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
-
-      
-  </body>
+</body>
 </html>

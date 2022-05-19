@@ -43,24 +43,24 @@ namespace LiquidWebApp.Controllers
             iliquidinfoRep.Create(liquidinfo, capid, comid, nicid, vgpgid);
             return View(); //RedirectToAction("LiquidsShowPage", "Liquid");
         }
-          [HttpGet]
-           public IActionResult Edit(int Id)
-           {
-               return View(iliquidinfoRep.Get(Id));
-           }
-           [HttpPost]
-           public IActionResult Edit(LiquidINfo liquidinfo)
-           {
+        [HttpGet]
+        public IActionResult Edit(int Id)
+        {
+            return View(iliquidinfoRep.Get(Id));
+        }
+        [HttpPost]
+        public IActionResult Edit(LiquidINfo liquidinfo)
+        {
             liquidinfo.vGPG = vGPGRep.Set(liquidinfo.vGPG.VgPg);
             liquidinfo.nicotine = nicotineRep.Set(liquidinfo.nicotine.Mg);
             liquidinfo.capacity = capacityRep.Set(liquidinfo.capacity.Ml);
             liquidinfo.company = companyRep.Set(liquidinfo.company.CompanyName);
             iliquidinfoRep.Edit(liquidinfo);
-               return RedirectToAction("LiquidsShowPage", "Liquid");
-           }
-           [HttpGet]
-           public IActionResult LiquidsShowPage(IEnumerable <LiquidINfo> liquidINfos)
-           {
+            return RedirectToAction("LiquidsShowPage", "Liquid");
+        }
+        [HttpGet]
+        public IActionResult LiquidsShowPage(IEnumerable<LiquidINfo> liquidINfos)
+        {
             if (liquidINfos == null)
                 return View(iliquidinfoRep.GetAll());
             else
@@ -69,8 +69,8 @@ namespace LiquidWebApp.Controllers
 
         public IActionResult search(string text)
         {
-            IEnumerable  <LiquidINfo> list = iliquidinfoRep.searcher(text);
-            return View("LiquidsShowPage",list);
+            IEnumerable<LiquidINfo> list = iliquidinfoRep.searcher(text);
+            return View("LiquidsShowPage", list);
         }
         [HttpGet]
         public IActionResult Remove(int id)
@@ -78,16 +78,16 @@ namespace LiquidWebApp.Controllers
             return View(iliquidinfoRep.Get(id));
         }
         [HttpPost]
-           public IActionResult Remove(LiquidINfo liquidinfo)
-           {
-            
+        public IActionResult Remove(LiquidINfo liquidinfo)
+        {
+
             iliquidinfoRep.Delete(liquidinfo.Id);
-               return RedirectToAction("LiquidsShowPage", "Liquid");
-           }
-           public IActionResult ViewLiquid(int Id)
-           {
-               return View(iliquidinfoRep.Get(Id));
-           }
-      
+            return RedirectToAction("LiquidsShowPage", "Liquid");
+        }
+        public IActionResult ViewLiquid(int Id)
+        {
+            return View(iliquidinfoRep.Get(Id));
+        }
+
     }
 }
