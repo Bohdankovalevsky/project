@@ -34,10 +34,10 @@ namespace LiquidRepositories
         public void Edit(LiquidINfo model)
         {
             ctx.LInfo.First(x => x.Id == model.Id).taste = model.taste;
-            ctx.LInfo.First(x => x.Id == model.Id).capacity.Ml = model.capacity.Ml;
-            ctx.LInfo.First(x => x.Id == model.Id).company.CompanyName = model.company.CompanyName;
-            ctx.LInfo.First(x => x.Id == model.Id).nicotine.Mg = model.nicotine.Mg;
-            ctx.LInfo.First(x => x.Id == model.Id).vGPG.VgPg = model.vGPG.VgPg;
+            ctx.LInfo.First(x => x.Id == model.Id).capacity = model.capacity;
+            ctx.LInfo.First(x => x.Id == model.Id).company = model.company;
+            ctx.LInfo.First(x => x.Id == model.Id).nicotine = model.nicotine;
+            ctx.LInfo.First(x => x.Id == model.Id).vGPG = model.vGPG;
             ctx.LInfo.First(x => x.Id == model.Id).description=model.description;
             ctx.LInfo.First(x => x.Id == model.Id).picture = model.picture;
              ctx.SaveChanges();
@@ -49,7 +49,7 @@ namespace LiquidRepositories
             model.nicotine = ctx.nicotines.Find(nicid);
             model.vGPG = ctx.vgps.Find(vgpgid);
 
-             ctx.LInfo.AddAsync(model);
+             ctx.LInfo.Add(model);
              ctx.SaveChanges();
         }
 

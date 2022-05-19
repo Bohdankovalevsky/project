@@ -2,7 +2,7 @@
 @using Microsoft.AspNetCore.Identity
 @model LiquidINfo
 
-<h1>Відредагувати товар </h1>
+<h1>Відредагувати рідину </h1>
 <hr />
 @if(User.Identity.Name=="admin@liquid.com")
 {
@@ -52,6 +52,7 @@
     </div>
     <h1>    </h1>
     <button type="submit" class="btn btn-outline-primary">зберегти </button> 
+    <a class="btn btn-outline-primary" asp-controller="Liquid" asp-action="LiquidsShowPage">назад </a> 
 </form>
 }
 else
